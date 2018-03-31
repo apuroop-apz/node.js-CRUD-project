@@ -42,6 +42,11 @@ const connection    =   mysql.createConnection({ // Creating the connection with
                         
 module.exports      =   connection;
 ```
+* Create Database 'cars'. (See cars.sql inside core folder)
+
+We are using two tables, **new_cars** and **used_cars** inside the **cars** database. 
+
+Make sure to use the exact names!!! (Different names can be used but need to edit other files as well)
 
 * Fire the node application
 Inside the project folder,
