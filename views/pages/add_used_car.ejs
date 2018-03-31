@@ -1,0 +1,64 @@
+<% include ../partials/header %>
+
+<% include ../partials/navbar %>
+<div class="form-group row border myOwnDiv" style="margin: 25px 40px">
+    <form action="http://localhost:5000/addusedcars" method="post" class="col s12">
+        <input type="hidden" name="id" value="">
+        <div class="form-group row">
+            <label for="make" class="col-2 col-form-label">Make</label>
+            <div class="col-10">
+                <input type="text" name="make" value="" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="title" class="col-2 col-form-label">Title</label>
+            <div class="col-10">
+                <input type="text" name="title" value="" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="type" class="col-2 col-form-label">Type</label>
+            <div class="col-10">
+                <input type="text" name="type" disabled value="" placeholder="Used" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="bodytype" class="col-2 col-form-label">Body Type</label>
+            <div class="col-10">
+                <input type="text" name="bodytype" value="" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="year" class="col-2 col-form-label">Year</label>
+            <div class="col-10">
+                <input type="number" name="year" min="1950" max="2018" value="" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="mileage" class="col-2 col-form-label">Mileage</label>
+            <div class="col-10">
+                <input type="number" name="mileage" value="" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="price" class="col-2 col-form-label">Price</label>
+            <div class="col-10">
+                <input type="number" name="price" value="" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="transmission" class="col-2 col-form-label">Transmission</label>
+            <div class="col-10">
+                <input type="text" name="transmission" value="" class="form-control" required>
+            </div>
+        </div>
+    
+        <div class="form-group row">
+            <label for="submit" class="col-2 col-form-label"></label>
+            <div class="col-10">
+                <input type="submit" name="submit" value="Submit" class="btn btn-success" onclick="return confirm('Are you sure about the details?')">
+            </div>
+        </div>
+    </form>
+    </div>
+<% include ../partials/footer %>

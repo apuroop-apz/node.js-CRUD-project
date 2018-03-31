@@ -1,0 +1,48 @@
+<% include ../partials/header %>
+<% include ../partials/navbar %>
+<div class="= border myOwnDiv">
+    <div class="col s12">
+        <% if (items.length > 0) { %>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Make</th>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Body Type</th>
+                        <th>Year</th>
+                        <th>Mileage</th>
+                        <th>Price</th>
+                        <th>Transmission</th>
+                        <th style="text-align:center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% items.forEach(function(item, index){ %>
+                    <tr>
+                        <td><%= item.id %></td>
+                        <td><%= item.make %></td>
+                        <td><%= item.title %></td>
+                        <td><%= item.type %></td>
+                        <td><%= item.bodytype %></td>
+                        <td><%= item.year %></td>
+                        <td><%= item.mileage %></td>
+                        <td><%= item.price %></td>
+                        <td><%= item.transmission %></td>                        
+                        <td style="text-align:center">
+                            <form action="http://localhost:5000/deleteusedcars/<%= item.id %>?_method=DELETE" method="post" class="col-sm">
+                                <a href="/editusedcars/<%= item.id %>" class="btn btn-success" onclick="return confirm('Are you sure you want to edit?')">Edit</a>
+                                <input type="submit" name="delete" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')">                                
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        <% }else{ %>
+            <p class="alert">There are no records available.</p>
+        <% } %>
+    </div>
+</div>
+<% include ../partials/footer %>
